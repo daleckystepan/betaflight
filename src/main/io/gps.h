@@ -56,6 +56,11 @@ typedef enum {
 } ubloxMode_e;
 
 typedef enum {
+    UBLOX_PERIOD_100MS = 0,
+    UBLOX_PERIOD_200MS,
+} ubloxPeriod_e;
+
+typedef enum {
     GPS_BAUDRATE_115200 = 0,
     GPS_BAUDRATE_57600,
     GPS_BAUDRATE_38400,
@@ -90,6 +95,7 @@ typedef struct gpsConfig_s {
     gpsAutoBaud_e autoBaud;
     uint8_t gps_ublox_use_galileo;
     ubloxMode_e gps_ublox_mode;
+    uint8_t gps_ublox_refresh_rate_hz;
     uint8_t gps_set_home_point_once;
     uint8_t gps_use_3d_speed;
     uint8_t sbas_integrity;
@@ -120,7 +126,9 @@ typedef struct gpsSolutionData_s {
 
 typedef enum {
     GPS_MESSAGE_STATE_IDLE = 0,
-    GPS_MESSAGE_STATE_INIT,
+    GPS_MESSAGE_STATE_INIT_MODE,
+    GPS_MESSAGE_STATE_INIT_GENERIC,
+    GPS_MESSAGE_STATE_REFRESH_RATE,
     GPS_MESSAGE_STATE_SBAS,
     GPS_MESSAGE_STATE_GNSS,
     GPS_MESSAGE_STATE_INITIALIZED,
