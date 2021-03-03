@@ -90,10 +90,10 @@ typedef struct gpsConfig_s {
     gpsAutoBaud_e autoBaud;
     uint8_t gps_ublox_use_galileo;
     ubloxMode_e gps_ublox_mode;
-    uint8_t gps_ublox_refresh_rate_hz;
     uint8_t gps_set_home_point_once;
     uint8_t gps_use_3d_speed;
     uint8_t sbas_integrity;
+    uint8_t gps_ublox_refresh_rate_hz;
 } gpsConfig_t;
 
 PG_DECLARE(gpsConfig_t, gpsConfig);
