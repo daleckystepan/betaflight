@@ -56,11 +56,6 @@ typedef enum {
 } ubloxMode_e;
 
 typedef enum {
-    UBLOX_PERIOD_100MS = 0,
-    UBLOX_PERIOD_200MS,
-} ubloxPeriod_e;
-
-typedef enum {
     GPS_BAUDRATE_115200 = 0,
     GPS_BAUDRATE_57600,
     GPS_BAUDRATE_38400,
